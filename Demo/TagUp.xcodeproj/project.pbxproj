@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF0C93E81CCDD2A700181080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0C93E71CCDD2A700181080 /* AppDelegate.swift */; };
+		AF0C93EA1CCDD2A700181080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0C93E91CCDD2A700181080 /* ViewController.swift */; };
+		AF0C93ED1CCDD2A700181080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF0C93EB1CCDD2A700181080 /* Main.storyboard */; };
+		AF0C93EF1CCDD2A700181080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF0C93EE1CCDD2A700181080 /* Assets.xcassets */; };
+		AF0C93F21CCDD2A700181080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF0C93F01CCDD2A700181080 /* LaunchScreen.storyboard */; };
+		AF0C93FD1CCDD2A700181080 /* TagUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0C93FC1CCDD2A700181080 /* TagUpTests.swift */; };
+		AF0C94081CCDD2A700181080 /* TagUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0C94071CCDD2A700181080 /* TagUpUITests.swift */; };
+		AF4FEE871CD1184600031736 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FEE861CD1184600031736 /* TagsViewController.swift */; };
+		AF4FEE8B1CD12F9600031736 /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FEE8A1CD12F9600031736 /* TagsTableViewCell.swift */; };
+		AF4FEE911CD1671E00031736 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4FEE901CD1671E00031736 /* Charts.framework */; };
+		AF4FEE921CD1671E00031736 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF4FEE901CD1671E00031736 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4CC9BB7AABFA999476FB1F4 /* Pods_TagUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9B754C570B720C032C7C89 /* Pods_TagUp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF0C93F91CCDD2A700181080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF0C93DC1CCDD2A600181080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF0C93E31CCDD2A700181080;
+			remoteInfo = TagUp;
+		};
+		AF0C94041CCDD2A700181080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF0C93DC1CCDD2A600181080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF0C93E31CCDD2A700181080;
+			remoteInfo = TagUp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF4FEE931CD1671E00031736 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AF4FEE921CD1671E00031736 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2DB768F4744A23EB065CC628 /* Pods-TagUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TagUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TagUp/Pods-TagUp.release.xcconfig"; sourceTree = "<group>"; };
+		61F106A4A259A8DED4B97B7A /* Pods-TagUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TagUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TagUp/Pods-TagUp.debug.xcconfig"; sourceTree = "<group>"; };
+		AF0C93E41CCDD2A700181080 /* TagUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TagUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF0C93E71CCDD2A700181080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF0C93E91CCDD2A700181080 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF0C93EC1CCDD2A700181080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF0C93EE1CCDD2A700181080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF0C93F11CCDD2A700181080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF0C93F31CCDD2A700181080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF0C93F81CCDD2A700181080 /* TagUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TagUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF0C93FC1CCDD2A700181080 /* TagUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUpTests.swift; sourceTree = "<group>"; };
+		AF0C93FE1CCDD2A700181080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF0C94031CCDD2A700181080 /* TagUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TagUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF0C94071CCDD2A700181080 /* TagUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUpUITests.swift; sourceTree = "<group>"; };
+		AF0C94091CCDD2A700181080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF4FEE861CD1184600031736 /* TagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
+		AF4FEE8A1CD12F9600031736 /* TagsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
+		AF4FEE901CD1671E00031736 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Charts.framework; path = "/Users/behrooza/Library/Developer/Xcode/DerivedData/TagUp-gpeqbtemjkwquyfycivpgqobkboc/Build/Products/Debug-iphonesimulator/Charts.framework"; sourceTree = "<absolute>"; };
+		CB9B754C570B720C032C7C89 /* Pods_TagUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TagUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF0C93E11CCDD2A700181080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4CC9BB7AABFA999476FB1F4 /* Pods_TagUp.framework in Frameworks */,
+				AF4FEE911CD1671E00031736 /* Charts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF0C93F51CCDD2A700181080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF0C94001CCDD2A700181080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD948ED0559C26A59AA872D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB9B754C570B720C032C7C89 /* Pods_TagUp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF0C93DB1CCDD2A600181080 = {
+			isa = PBXGroup;
+			children = (
+				AF4FEE901CD1671E00031736 /* Charts.framework */,
+				AF0C93E61CCDD2A700181080 /* TagUp */,
+				AF0C93FB1CCDD2A700181080 /* TagUpTests */,
+				AF0C94061CCDD2A700181080 /* TagUpUITests */,
+				AF0C93E51CCDD2A700181080 /* Products */,
+				D609B7193AA8112346669B9B /* Pods */,
+				AD948ED0559C26A59AA872D7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AF0C93E51CCDD2A700181080 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF0C93E41CCDD2A700181080 /* TagUp.app */,
+				AF0C93F81CCDD2A700181080 /* TagUpTests.xctest */,
+				AF0C94031CCDD2A700181080 /* TagUpUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF0C93E61CCDD2A700181080 /* TagUp */ = {
+			isa = PBXGroup;
+			children = (
+				AF0C93E71CCDD2A700181080 /* AppDelegate.swift */,
+				AF0C93E91CCDD2A700181080 /* ViewController.swift */,
+				AF0C93EB1CCDD2A700181080 /* Main.storyboard */,
+				AF4FEE861CD1184600031736 /* TagsViewController.swift */,
+				AF4FEE8A1CD12F9600031736 /* TagsTableViewCell.swift */,
+				AF0C93EE1CCDD2A700181080 /* Assets.xcassets */,
+				AF0C93F01CCDD2A700181080 /* LaunchScreen.storyboard */,
+				AF0C93F31CCDD2A700181080 /* Info.plist */,
+			);
+			path = TagUp;
+			sourceTree = "<group>";
+		};
+		AF0C93FB1CCDD2A700181080 /* TagUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF0C93FC1CCDD2A700181080 /* TagUpTests.swift */,
+				AF0C93FE1CCDD2A700181080 /* Info.plist */,
+			);
+			path = TagUpTests;
+			sourceTree = "<group>";
+		};
+		AF0C94061CCDD2A700181080 /* TagUpUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF0C94071CCDD2A700181080 /* TagUpUITests.swift */,
+				AF0C94091CCDD2A700181080 /* Info.plist */,
+			);
+			path = TagUpUITests;
+			sourceTree = "<group>";
+		};
+		D609B7193AA8112346669B9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61F106A4A259A8DED4B97B7A /* Pods-TagUp.debug.xcconfig */,
+				2DB768F4744A23EB065CC628 /* Pods-TagUp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF0C93E31CCDD2A700181080 /* TagUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF0C940C1CCDD2A700181080 /* Build configuration list for PBXNativeTarget "TagUp" */;
+			buildPhases = (
+				1072D3088E03A477804F8586 /* Check Pods Manifest.lock */,
+				AF0C93E01CCDD2A700181080 /* Sources */,
+				AF0C93E11CCDD2A700181080 /* Frameworks */,
+				AF0C93E21CCDD2A700181080 /* Resources */,
+				DAE16F137FFA1DFAE2401A53 /* Embed Pods Frameworks */,
+				4FAF2E01E5E2C4A93E8BCC37 /* Copy Pods Resources */,
+				AF4FEE931CD1671E00031736 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TagUp;
+			productName = TagUp;
+			productReference = AF0C93E41CCDD2A700181080 /* TagUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF0C93F71CCDD2A700181080 /* TagUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF0C940F1CCDD2A700181080 /* Build configuration list for PBXNativeTarget "TagUpTests" */;
+			buildPhases = (
+				AF0C93F41CCDD2A700181080 /* Sources */,
+				AF0C93F51CCDD2A700181080 /* Frameworks */,
+				AF0C93F61CCDD2A700181080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF0C93FA1CCDD2A700181080 /* PBXTargetDependency */,
+			);
+			name = TagUpTests;
+			productName = TagUpTests;
+			productReference = AF0C93F81CCDD2A700181080 /* TagUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF0C94021CCDD2A700181080 /* TagUpUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF0C94121CCDD2A700181080 /* Build configuration list for PBXNativeTarget "TagUpUITests" */;
+			buildPhases = (
+				AF0C93FF1CCDD2A700181080 /* Sources */,
+				AF0C94001CCDD2A700181080 /* Frameworks */,
+				AF0C94011CCDD2A700181080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF0C94051CCDD2A700181080 /* PBXTargetDependency */,
+			);
+			name = TagUpUITests;
+			productName = TagUpUITests;
+			productReference = AF0C94031CCDD2A700181080 /* TagUpUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF0C93DC1CCDD2A600181080 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Behrooz;
+				TargetAttributes = {
+					AF0C93E31CCDD2A700181080 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = Z893DJV54Q;
+					};
+					AF0C93F71CCDD2A700181080 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = AF0C93E31CCDD2A700181080;
+					};
+					AF0C94021CCDD2A700181080 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = AF0C93E31CCDD2A700181080;
+					};
+				};
+			};
+			buildConfigurationList = AF0C93DF1CCDD2A600181080 /* Build configuration list for PBXProject "TagUp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF0C93DB1CCDD2A600181080;
+			productRefGroup = AF0C93E51CCDD2A700181080 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF0C93E31CCDD2A700181080 /* TagUp */,
+				AF0C93F71CCDD2A700181080 /* TagUpTests */,
+				AF0C94021CCDD2A700181080 /* TagUpUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF0C93E21CCDD2A700181080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF0C93F21CCDD2A700181080 /* LaunchScreen.storyboard in Resources */,
+				AF0C93EF1CCDD2A700181080 /* Assets.xcassets in Resources */,
+				AF0C93ED1CCDD2A700181080 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF0C93F61CCDD2A700181080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF0C94011CCDD2A700181080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1072D3088E03A477804F8586 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4FAF2E01E5E2C4A93E8BCC37 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TagUp/Pods-TagUp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAE16F137FFA1DFAE2401A53 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TagUp/Pods-TagUp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF0C93E01CCDD2A700181080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF4FEE8B1CD12F9600031736 /* TagsTableViewCell.swift in Sources */,
+				AF0C93EA1CCDD2A700181080 /* ViewController.swift in Sources */,
+				AF0C93E81CCDD2A700181080 /* AppDelegate.swift in Sources */,
+				AF4FEE871CD1184600031736 /* TagsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF0C93F41CCDD2A700181080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF0C93FD1CCDD2A700181080 /* TagUpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF0C93FF1CCDD2A700181080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF0C94081CCDD2A700181080 /* TagUpUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF0C93FA1CCDD2A700181080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF0C93E31CCDD2A700181080 /* TagUp */;
+			targetProxy = AF0C93F91CCDD2A700181080 /* PBXContainerItemProxy */;
+		};
+		AF0C94051CCDD2A700181080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF0C93E31CCDD2A700181080 /* TagUp */;
+			targetProxy = AF0C94041CCDD2A700181080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF0C93EB1CCDD2A700181080 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF0C93EC1CCDD2A700181080 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF0C93F01CCDD2A700181080 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF0C93F11CCDD2A700181080 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF0C940A1CCDD2A700181080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF0C940B1CCDD2A700181080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF0C940D1CCDD2A700181080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61F106A4A259A8DED4B97B7A /* Pods-TagUp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TagUp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bcgdv.TagUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		AF0C940E1CCDD2A700181080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DB768F4744A23EB065CC628 /* Pods-TagUp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TagUp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bcgdv.TagUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		AF0C94101CCDD2A700181080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TagUpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bcgdv.TagUpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TagUp.app/TagUp";
+			};
+			name = Debug;
+		};
+		AF0C94111CCDD2A700181080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TagUpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bcgdv.TagUpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TagUp.app/TagUp";
+			};
+			name = Release;
+		};
+		AF0C94131CCDD2A700181080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TagUpUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bcgdv.TagUpUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TagUp;
+			};
+			name = Debug;
+		};
+		AF0C94141CCDD2A700181080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TagUpUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bcgdv.TagUpUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TagUp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF0C93DF1CCDD2A600181080 /* Build configuration list for PBXProject "TagUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF0C940A1CCDD2A700181080 /* Debug */,
+				AF0C940B1CCDD2A700181080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF0C940C1CCDD2A700181080 /* Build configuration list for PBXNativeTarget "TagUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF0C940D1CCDD2A700181080 /* Debug */,
+				AF0C940E1CCDD2A700181080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF0C940F1CCDD2A700181080 /* Build configuration list for PBXNativeTarget "TagUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF0C94101CCDD2A700181080 /* Debug */,
+				AF0C94111CCDD2A700181080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF0C94121CCDD2A700181080 /* Build configuration list for PBXNativeTarget "TagUpUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF0C94131CCDD2A700181080 /* Debug */,
+				AF0C94141CCDD2A700181080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF0C93DC1CCDD2A600181080 /* Project object */;
+}
