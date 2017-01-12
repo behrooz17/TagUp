@@ -15,10 +15,10 @@
 import Foundation
 import CoreGraphics
 
-public class ChartHighlighter : NSObject
+open class ChartHighlighter : NSObject
 {
     /// instance of the data-provider
-    public weak var chart: BarLineChartViewBase?
+    open weak var chart: BarLineChartViewBase?
     
     public init(chart: BarLineChartViewBase)
     {
@@ -29,7 +29,7 @@ public class ChartHighlighter : NSObject
     /// - parameter x:
     /// - parameter y:
     /// - returns:
-    public func getHighlight(x x: Double, y: Double) -> ChartHighlight?
+    open func getHighlight(x: Double, y: Double) -> ChartHighlight?
     {
         let xIndex = getXIndex(x)
         if (xIndex == -Int.max)
@@ -49,13 +49,13 @@ public class ChartHighlighter : NSObject
     /// Returns the corresponding x-index for a given touch-position in pixels.
     /// - parameter x:
     /// - returns:
-    public func getXIndex(x: Double) -> Int
+    open func getXIndex(_ x: Double) -> Int
     {
         // create an array of the touch-point
         var pt = CGPoint(x: x, y: 0.0)
         
         // take any transformer to determine the x-axis value
-        self.chart?.getTransformer(ChartYAxis.AxisDependency.Left).pixelToValue(&pt)
+        self.chart?.getTransformer(ChartYAxis.AxisDependency.left).pixelToValue(&pt)
         
         return Int(round(pt.x))
     }
@@ -65,14 +65,14 @@ public class ChartHighlighter : NSObject
     /// - parameter x:
     /// - parameter y:
     /// - returns:
-    public func getDataSetIndex(xIndex xIndex: Int, x: Double, y: Double) -> Int
+    open func getDataSetIndex(xIndex: Int, x: Double, y: Double) -> Int
     {
         let valsAtIndex = getSelectionDetailsAtIndex(xIndex)
         
-        let leftdist = ChartUtils.getMinimumDistance(valsAtIndex, val: y, axis: ChartYAxis.AxisDependency.Left)
-        let rightdist = ChartUtils.getMinimumDistance(valsAtIndex, val: y, axis: ChartYAxis.AxisDependency.Right)
+        let leftdist = ChartUtils.getMinimumDistance(valsAtIndex, val: y, axis: ChartYAxis.AxisDependency.left)
+        let rightdist = ChartUtils.getMinimumDistance(valsAtIndex, val: y, axis: ChartYAxis.AxisDependency.right)
         
-        let axis = leftdist < rightdist ? ChartYAxis.AxisDependency.Left : ChartYAxis.AxisDependency.Right
+        let axis = leftdist < rightdist ? ChartYAxis.AxisDependency.left : ChartYAxis.AxisDependency.right
         
         let dataSetIndex = ChartUtils.closestDataSetIndex(valsAtIndex, value: y, axis: axis)
         
@@ -82,7 +82,7 @@ public class ChartHighlighter : NSObject
     /// Returns a list of SelectionDetail object corresponding to the given xIndex.
     /// - parameter xIndex:
     /// - returns:
-    public func getSelectionDetailsAtIndex(xIndex: Int) -> [ChartSelectionDetail]
+    open func getSelectionDetailsAtIndex(_ xIndex: Int) -> [ChartSelectionDetail]
     {
         var vals = [ChartSelectionDetail]()
         var pt = CGPoint()

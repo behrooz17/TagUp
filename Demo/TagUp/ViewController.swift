@@ -23,30 +23,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var progressView: UIProgressView!
     
     // If the app is run on the simulator , Photo Libarary folder gets choseb to pick an image.If it runs on device Camera gets activated.
-    @IBAction func btnTakePhoto(sender: UIButton) {
+    @IBAction func btnTakePhoto(_ sender: UIButton) {
         
         let picker = UIImagePickerController()
         picker.delegate      = self
         picker.allowsEditing = false
-        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-            picker.sourceType = UIImagePickerControllerSourceType.Camera
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = UIImagePickerControllerSourceType.camera
         } else {
-            picker.sourceType = .PhotoLibrary
-            picker.modalPresentationStyle = .FullScreen
+            picker.sourceType = .photoLibrary
+            picker.modalPresentationStyle = .fullScreen
         }
-        presentViewController(picker, animated: true, completion: nil)
+        present(picker, animated: true, completion: nil)
         
     }
     
     //Read the Image Picked from UIImagePickerController
     //“imagePickerController:didFinishPickingMediaWithInfo:” which is called exactly what it sounds like it should be, when the user picks something.
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.contentMode = .ScaleAspectFit
+            imageView.contentMode = .scaleAspectFit
             imageView.image = pickedImage
-            btnTakePhotoOutlet.hidden = true
+            btnTakePhotoOutlet.isHidden = true
             progressView.progress = 0.0
-            progressView.hidden = false
+            progressView.isHidden = false
             activityInductorView.startAnimating()
             
             //uploadint the image by calling the uploadImage() - Alamofir.upload
@@ -58,7 +58,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
         }
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -66,8 +66,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Checks if the device doesn't have a camera , it asks the user to select a photo
-        if !UIImagePickerController.isSourceTypeAvailable((.Camera)){
-            btnTakePhotoOutlet.setTitle("Select Photo", forState: .Normal)
+        if !UIImagePickerController.isSourceTypeAvailable((.camera)){
+            btnTakePhotoOutlet.setTitle("Select Photo", for: UIControlState())
         
         }
         // set the image view nill at the time of loading
@@ -75,7 +75,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // setting the Take Photo button attributes.
         btnTakePhotoOutlet.layer.cornerRadius = 5
         btnTakePhotoOutlet.layer.borderWidth = 1
-        btnTakePhotoOutlet.layer.borderColor = UIColor.blackColor().CGColor
+        btnTakePhotoOutlet.layer.borderColor = UIColor.black.cgColor
     }
 
     
@@ -83,7 +83,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 // MARK: - Networking
 //These UIImageXXXRepresentation functions strip the image of its meta data.
 extension ViewController {
-    func uploadImage ( image : UIImage, progress :(percent : Float) ->Void ) -> Void {
+    func uploadImage ( _ image : UIImage, progress :@escaping (_ percent : Float) ->Void ) -> Void {
         let imageData  = UIImageJPEGRepresentation(image, 0.5)
         
         //Uploading the picked image
@@ -99,13 +99,13 @@ extension ViewController {
                 // getting akcnowledgemnet  - response of uploading image
                 print ("reposns ein cURL \(encodingResult)")
                 switch encodingResult {
-                case .Success(let upload, _, _):
+                case .success(let upload, _, _):
                     upload.progress{ bytesWritten, totalBytesWritten, totalBytesExpectedToWrite in
                         print(totalBytesWritten)
                         // https://github.com/Alamofire/Alamofire   -- look for "Uploading with Progress"
                         // This closure is NOT called on the main queue for performance
                         // reasons. To update your ui, dispatch to the main queue.
-                        dispatch_async(dispatch_get_main_queue()) {
+                        DispatchQueue.main.async {
                             print("Total bytes written on main queue: \(totalBytesWritten)")
                             let percent = (Float(totalBytesWritten) / Float(totalBytesExpectedToWrite))
                             progress(percent: percent)
@@ -135,10 +135,10 @@ extension ViewController {
                                 self.colors = colors
                                 print ("colors top is \(colors)")
                                 //self.btnTakePhotoOutlet.hidden = false
-                                self.progressView.hidden = true
+                                self.progressView.isHidden = true
                                 self.activityInductorView.stopAnimating()
-                                self.performSegueWithIdentifier("ShowResults", sender: self)
-                                self.btnTakePhotoOutlet.hidden = false
+                                self.performSegue(withIdentifier: "ShowResults", sender: self)
+                                self.btnTakePhotoOutlet.isHidden = false
                             })
                             self.tags = json
                             
@@ -155,14 +155,14 @@ extension ViewController {
                         
                         }
                     // the enum getting returned by the validation() - https://github.com/Alamofire/Alamofire   look for "Manual Validation"
-                   case .Failure(let encodingError):
+                   case .failure(let encodingError):
                     print(encodingError)
                 }
                 
             })
     }
     // downloading tags and confidences finction
-    func downloadTags( contentID:String, success: (json: [JSON]) -> Void ) -> Void  {
+    func downloadTags( _ contentID:String, success: (_ json: [JSON]) -> Void ) -> Void  {
     
     Alamofire.request(.GET, "http://api.imagga.com/v1/tagging", parameters: ["content": contentID], headers: ["Authorization" : "Basic YWNjXzkxZGIzNDNiNzY5ZTcxNTowNDA5NzhjZmE1ZTJkYTE0Mjg2NWJkZTZmMzMyODU3Mw=="]).responseJSON { response in
         
@@ -180,7 +180,7 @@ extension ViewController {
     
 }
     // downlading colors information
-    func downloadColors(contentID: String, success:(colors:[JSON]) -> Void) -> Void {
+    func downloadColors(_ contentID: String, success:(_ colors:[JSON]) -> Void) -> Void {
         Alamofire.request(.GET, "https://api.imagga.com/v1/colors", parameters:["content": contentID],  headers: ["Authorization" : "Basic YWNjXzkxZGIzNDNiNzY5ZTcxNTowNDA5NzhjZmE1ZTJkYTE0Mjg2NWJkZTZmMzMyODU3Mw=="]).responseJSON { response in
             let json = JSON(data: response.data!)
             
@@ -192,10 +192,10 @@ extension ViewController {
         }
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
             navigationItem.title = nil
-            let controller = segue.destinationViewController as! TagsViewController
+            let controller = segue.destination as! TagsViewController
        
             controller.tags   = tags
             controller.colors = colors

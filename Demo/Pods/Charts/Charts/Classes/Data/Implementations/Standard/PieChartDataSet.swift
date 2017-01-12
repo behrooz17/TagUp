@@ -15,12 +15,12 @@
 import Foundation
 import CoreGraphics
 
-public class PieChartDataSet: ChartDataSet, IPieChartDataSet
+open class PieChartDataSet: ChartDataSet, IPieChartDataSet
 {
-    private func initialize()
+    fileprivate func initialize()
     {
-        self.valueTextColor = NSUIColor.whiteColor()
-        self.valueFont = NSUIFont.systemFontOfSize(13.0)
+        self.valueTextColor = NSUIColor.white
+        self.valueFont = NSUIFont.systemFont(ofSize: 13.0)
     }
     
     public required init()
@@ -37,12 +37,12 @@ public class PieChartDataSet: ChartDataSet, IPieChartDataSet
     
     // MARK: - Styling functions and accessors
     
-    private var _sliceSpace = CGFloat(0.0)
+    fileprivate var _sliceSpace = CGFloat(0.0)
     
     /// the space in pixels between the pie-slices
     /// **default**: 0
     /// **maximum**: 20
-    public var sliceSpace: CGFloat
+    open var sliceSpace: CGFloat
     {
         get
         {
@@ -64,11 +64,11 @@ public class PieChartDataSet: ChartDataSet, IPieChartDataSet
     }
     
     /// indicates the selection distance of a pie slice
-    public var selectionShift = CGFloat(18.0)
+    open var selectionShift = CGFloat(18.0)
     
     // MARK: - NSCopying
     
-    public override func copyWithZone(zone: NSZone) -> AnyObject
+    open override func copyWithZone(_ zone: NSZone?) -> AnyObject
     {
         let copy = super.copyWithZone(zone) as! PieChartDataSet
         copy._sliceSpace = _sliceSpace

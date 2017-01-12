@@ -15,9 +15,9 @@
 import Foundation
 import CoreGraphics
 
-public class HorizontalBarChartHighlighter: BarChartHighlighter
+open class HorizontalBarChartHighlighter: BarChartHighlighter
 {
-    public override func getHighlight(x x: Double, y: Double) -> ChartHighlight?
+    open override func getHighlight(x: Double, y: Double) -> ChartHighlight?
     {
         let h = super.getHighlight(x: x, y: y)
         
@@ -46,7 +46,7 @@ public class HorizontalBarChartHighlighter: BarChartHighlighter
         }
     }
     
-    public override func getXIndex(x: Double) -> Int
+    open override func getXIndex(_ x: Double) -> Int
     {
         if let barChartData = self.chart?.data as? BarChartData
         {
@@ -56,7 +56,7 @@ public class HorizontalBarChartHighlighter: BarChartHighlighter
                 var pt = CGPoint(x: 0.0, y: x)
                 
                 // take any transformer to determine the x-axis value
-                self.chart?.getTransformer(ChartYAxis.AxisDependency.Left).pixelToValue(&pt)
+                self.chart?.getTransformer(ChartYAxis.AxisDependency.left).pixelToValue(&pt)
                 
                 return Int(round(pt.y))
             }
@@ -90,7 +90,7 @@ public class HorizontalBarChartHighlighter: BarChartHighlighter
     /// Returns the base y-value to the corresponding x-touch value in pixels.
     /// - parameter y:
     /// - returns:
-    public override func getBase(y: Double) -> Double
+    open override func getBase(_ y: Double) -> Double
     {
         if let barChartData = self.chart?.data as? BarChartData
         {
@@ -99,7 +99,7 @@ public class HorizontalBarChartHighlighter: BarChartHighlighter
             pt.y = CGFloat(y)
             
             // take any transformer to determine the x-axis value
-            self.chart?.getTransformer(ChartYAxis.AxisDependency.Left).pixelToValue(&pt)
+            self.chart?.getTransformer(ChartYAxis.AxisDependency.left).pixelToValue(&pt)
             let yVal = Double(pt.y)
             
             let setCount = barChartData.dataSetCount ?? 0

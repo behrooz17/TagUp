@@ -31,7 +31,7 @@ class TagsViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var barChartView: BarChartView!
     
     // Controlling the charts depending on the segment controlled selection.
-    @IBAction func tagsColorsSegmentController(sender: UISegmentedControl) {
+    @IBAction func tagsColorsSegmentController(_ sender: UISegmentedControl) {
         
         tableView.reloadData()
         barChartView.reloadInputViews()
@@ -44,7 +44,7 @@ class TagsViewController: UIViewController, UITableViewDataSource {
     }
     // MARK: - Bar Chart
     // creating the bar chart. https://github.com/danielgindi/Charts
-    func setChart(dataPoints: [String], values: [Int]) {
+    func setChart(_ dataPoints: [String], values: [Int]) {
         
         let arrayLn = dataPoints
         var xValue:[String] = []
@@ -79,18 +79,18 @@ class TagsViewController: UIViewController, UITableViewDataSource {
         // changing the bar color
         chartDataSet.colors = [UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)]
         barChartView.data = chartData
-        barChartView.xAxis.labelPosition = .Bottom
+        barChartView.xAxis.labelPosition = .bottom
         barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         barChartView.descriptionText = desc
     }
     
      // MARK: - Table view data source
     // depending on which segment controller has been selected , displayes the corresponding data in table view.
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var data = 0
         switch ( SegmentedControl.selectedSegmentIndex) {
@@ -105,8 +105,8 @@ class TagsViewController: UIViewController, UITableViewDataSource {
         }
         return data
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TagsTableViewCell") as! TagsTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TagsTableViewCell") as! TagsTableViewCell
         
         // serializing data - getting the tag and confidence
         switch (SegmentedControl.selectedSegmentIndex) {
@@ -115,14 +115,14 @@ class TagsViewController: UIViewController, UITableViewDataSource {
             let confData = tags[indexPath.row]["confidence"].intValue
             cell.lblTagCell.text = tagsData
             cell.lblConfCell.text = String(confData)
-            cell.colorViewCell.hidden = true
+            cell.colorViewCell.isHidden = true
             break
         case 1 :
             let colorData = colors[indexPath.row]["closest_palette_color"].stringValue
             let codeData = colors[indexPath.row]["html_code"].stringValue
             cell.lblTagCell.text = colorData
             cell.lblConfCell.text = codeData
-            cell.colorViewCell.hidden = false
+            cell.colorViewCell.isHidden = false
             // getting the RGB data and coloring the color view cell
             let red = colors[indexPath.row]["r"].intValue
             let blue = colors[indexPath.row]["b"].intValue
@@ -179,7 +179,7 @@ class TagsViewController: UIViewController, UITableViewDataSource {
 //            
 //        }
         // takes the top 3 tags.
-        for var i = 0; i < 3; i++ {
+        for i in 0 ..< 3 {
             arrayTagsGraph.append(arrayTags[i])
             arrayConfsGraph.append(arrayConfs[i])
         }
